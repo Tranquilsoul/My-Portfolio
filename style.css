@@ -313,7 +313,7 @@ h1[data-scroll="in"], h2[data-scroll="in"], li[data-scroll="in"], p[data-scroll=
    padding: 20px;
    width: 350px;
    top: 350px;
-   left: 120px;
+   left: 90px;
  }
 
  header div{
@@ -324,7 +324,7 @@ h1[data-scroll="in"], h2[data-scroll="in"], li[data-scroll="in"], p[data-scroll=
 
  .about{
   padding-inline: 80px;
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
  }
 
