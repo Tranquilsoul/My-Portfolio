@@ -1,33 +1,24 @@
-*{
+/* Base styles */
+* {
   margin: 0;
   font-family: poppins, sans-serif;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
-html.no-scroll{
+html.no-scroll {
   overflow: hidden;
 }
 
-.menu{
+.menu {
   display: flex;
   position: relative;
   float: right;
-  right: 50px;
-  top: 30px;
+  right: 2vw;
+  top: 2vw;
 }
 
-.menu .top{
-  position: absolute;
-  background-color: #000;
-  height: 4px;
-  width: 35px;
-  border-radius: 2px;
-  top: 9px;
-  transition: 0.3s ease;
-}
-
-.menu .middle{
+.menu .top, .menu .middle, .menu .bottom {
   position: absolute;
   background-color: #000;
   height: 4px;
@@ -36,356 +27,303 @@ html.no-scroll{
   transition: 0.3s ease;
 }
 
-.menu .bottom{
-  position: absolute;
-  background-color: #000;
-  height: 4px;
-  width: 35px;
-  border-radius: 2px;
-  bottom: 5px;
-  transition: 0.3s ease;
-}
+.menu .top { top: 9px; }
+.menu .middle { top: 14px; }
+.menu .bottom { bottom: 5px; }
 
-.navbar{
+.navbar {
   background-color: #7d2cd4;
-  position: absolute;
+  position: fixed; /* Changed to fixed for better positioning */
   height: 100vh;
-  width: 50vw;
-  padding: 50px;
-  padding-top: 100px;
+  width: 70%; /* Increased width for better visibility */
+  max-width: 300px;
+  padding: 20px;
+  padding-top: 60px; /* Adjusted for better alignment */
   text-align: center;
-  transition: all .5s;
+  transition: all 0.5s;
   left: -100%;
   z-index: 1;
-  font-size: 30px;
+  font-size: 1.5rem;
 }
 
-.navbar a{
+.navbar a {
   display: block;
   color: #fff;
   text-decoration: none;
-  padding-block: 40px;
+  padding-block: 20px;
 }
 
-.navbar.show{
+.navbar.show {
   left: 0;
 }
 
-header{
-  padding: 20px;
+header {
+  padding: 5vw;
   height: 100vh;
   background-color: #fbfafc;
   color: #000;
   text-align: center;
-  padding-top: 450px;
-  padding-left: 20px;
-  line-height: 50px;
-  font-size: 20px;
+  line-height: 1.5;
+  font-size: 1.2rem;
 }
 
-svg{
+svg {
   position: absolute;
-  left: 50px; 
-  top: 100px;
+  left: 5vw; 
+  top: 10vh;
   z-index: 0;
+  width: 20vw;
+  max-width: 150px;
 }
 
-.photo{
+.photo {
   position: absolute;
-  height: 90px;
-  width: 90px;
+  height: 10vw;
+  width: 10vw;
 }
 
-header span{
+header span {
   color: #7d2cd4;
 }
 
-.about{
+.about {
   background-color: #7d2cd4;
   color: #fff;
-  height: 50vh;
-  width: 100vw;
-  padding: 30px;
+  padding: 5vw;
+  text-align: center;
 }
 
-.about h1{
-  padding: 10px;
+.about h1 {
+  padding: 1vw;
+  font-size: 2rem;
 }
 
-.about p{
-  padding: 10px;
-  line-height: 30px;
+.about p {
+  padding: 1vw;
+  line-height: 1.5;
+  font-size: 1.2rem;
 }
 
-.skills{
+.skills {
   background-color: #fbfafc;
-  padding: 40px; 
+  padding: 5vw; 
 }
 
-.skills li{
+.skills li {
   list-style-type: none;
-  margin-block: 30px;
-} 
+  margin-block: 2vw;
+}
 
-.skills .percentage{
+.skills .percentage {
   position: relative;
   float: right;
-  margin-top: -25px;
+  margin-top: -1.5vw;
 }
 
-.bar{
+.bar {
   display: flex;
   width: 100%;
   border-radius: 15px;
   background-color: #d2cae6; 
   overflow: hidden;
-  height: 15px;
+  height: 1.5vw;
   transition: all 0.3s cubic-bezier(.25, .8, .21, 1);
-  
 }
-.bar span{
+
+.bar span {
   background-color: #7d2cd4;
-  height: 15px;
+  height: 100%;
   border-radius: 15px;
   float: left;
 }
 
-.html{
-  width: 90%;
+.html { width: 90%; }
+.css { width: 75%; }
+.js { width: 65%; }
+
+.html[data-scroll="in"] { animation: html 2s; }
+.css[data-scroll="in"] { animation: css 2s; }
+.js[data-scroll="in"] { animation: js 2s; }
+
+@keyframes html {
+  0% { width: 0; }
+  100% { width: 90%; }
 }
 
-.css{
-  width: 75%;
+@keyframes css {
+  0% { width: 0; }
+  100% { width: 75%; }
 }
 
-.js{
-  width: 65%;
+@keyframes js {
+  0% { width: 0; }
+  100% { width: 65%; }
 }
 
-.html[data-scroll="in"]{
-  animation: html 2s;
-}
-
-.css[data-scroll="in"]{
-  animation: css 2s;
-}
-
-.js[data-scroll="in"]{
-  animation: js 2s;
-}
-
-@keyframes html{
-  0%{
-    width: 0;
-  }
-  
-  100%{
-    width: 90%;
-  }
-}
-
-@keyframes css{
-  0%{
-    width: 0;
-  }
-  
-  100%{
-    width: 75%;
-  }
-}
-
-@keyframes js{
-  0%{
-    width: 0;
-  }
-  
-  100%{
-    width: 65%;
-  }
-}
-
-.html[data-scroll="out"], .css[data-scroll="out"], .js[data-scroll="out"]{
+.html[data-scroll="out"], .css[data-scroll="out"], .js[data-scroll="out"] {
   opacity: 0;
 }
 
-footer{
+footer {
   background-color: #fbfafc;
-  padding: 40px;
+  padding: 5vw;
+  text-align: center;
 }
 
-footer h1{
-  line-height: 35px;
+footer h1 {
+  line-height: 1.5;
+  font-size: 2rem;
 }
 
-footer p{
-  font-size: 15px;
-  padding-block: 5px;
+footer p {
+  font-size: 1.2rem;
+  padding-block: 1vw;
 }
 
-form{
-  margin-top: 20px;
+form {
+  margin-top: 2vw;
 }
 
-input, textarea{
-  margin-block: 10px;
-  padding: 10px;
+input, textarea {
+  margin-block: 1vw;
+  padding: 1vw;
   width: 100%;
-  height: 40px;
+  height: 3vw;
   border: 2px solid #e3e1e8;
   border-radius: 10px;
   outline: none; 
   transition: border 0.5s ease-out;
 }
 
-textarea{
-  height: 80px;
+textarea {
+  height: 6vw;
 }
 
-input:hover, textarea:hover{
+input:hover, textarea:hover {
   border: 2px solid #7d2cd4;
 }
 
-button{
-  height: 40px;
-  width: 90px;
+button {
+  height: 3vw;
+  width: 9vw;
   border: none;
   border-radius: 20px;
   background-color: #7d2cd4;
   color: #fff;
+  font-size: 1.2rem;
 }
 
-.links{
- padding-block: 20px;
+.links {
+  padding-block: 2vw;
+  font-size: 1.2rem;
 }
 
-.links i{
-  padding: 10px;
+.links i {
+  padding: 1vw;
   color: #000;
 }
 
-h1[data-scroll="in"], h2[data-scroll="in"], li[data-scroll="in"], p[data-scroll="in"], form[data-scroll="in"], i[data-scroll="in"]{
+h1[data-scroll="in"], h2[data-scroll="in"], li[data-scroll="in"], p[data-scroll="in"], form[data-scroll="in"], i[data-scroll="in"] {
   animation: myAnimation 1s;
 }
 
- h1[data-scroll="out"], #myName[data-scroll="in"], h2[data-scroll="out"], li[data-scroll="out"], p[data-scroll="out"], form[data-scroll="out"], i[data-scroll="out"]{
+h1[data-scroll="out"], #myName[data-scroll="in"], h2[data-scroll="out"], li[data-scroll="out"], p[data-scroll="out"], form[data-scroll="out"], i[data-scroll="out"] {
   opacity: 0;
-} 
+}
 
-@keyframes myAnimation{
-  0%{
+@keyframes myAnimation {
+  0% {
     opacity: 0;
     transform: translate(0px, 20px);
   }
-  
-  100%{
+  100% {
     opacity: 1;
     transform: translate(0px, 0px);
   }
 }
 
-@media only screen and (min-width: 768px) {
+/* Media Queries for Responsive Design */
+@media only screen and (max-width: 1024px) {
+  .menu {
+    right: 1.5vw;
+    top: 1.5vw;
+  }
+
+  .navbar {
+    width: 80%;
+    max-width: 280px;
+  }
+
   svg {
-    padding: 20px;
-    width: 30vw; 
-    max-width: 350px;
-    height: auto;
-    top: 10%;
+    width: 25vw;
   }
 
-  /* Other media query adjustments */
-  header div {
-    margin-left: 350px;
-    font-size: 30px;
-    line-height: 60px;
-  }
-
-  .about {
-    padding-inline: 80px;
-    height: 75vh;
-    width: 100vw;
-  }
-
-  .about h1 {
-    font-size: 50px;
-    padding: 20px;
-  }
-
-  .about p {
-    font-size: 30px;
-    padding: 20px;
-    line-height: 60px;
-  }
-
-  .skills {
-    padding-inline: 80px;
-  }
-
-  .skills h1 {
-    font-size: 50px;
-  }
-
-  .skills li {
-    margin-block: 50px;
-    font-size: 30px;
-  }
-
-  .skills .percentage {
-    margin-top: -40px; 
-  } 
-
-  .bar {
-    height: 30px;
-  }
-
-  .bar span {
-    height: 30px;
-  }
-
-  footer {
-    padding-inline: 80px;
-  }
-
-  footer h1 {
-    font-size: 50px;
-    line-height: 50px;
-  }
-
-  footer p {
-    font-size: 30px;
-    padding-block: 15px;
-  }
-
-  form {
-    margin-top: 30px;
-  }
-
-  input {
-    font-size: 30px;
-    margin: 5px;
-    width: 60%;
-    height: 80px;
-  }
-
-  form .id {
-    display: flex;
-  }
-
-  textarea {
-    height: 150px;
-    width: 100%;
-    font-size: 30px;
-  }
-
-  button {
-    height: 80px;
-    width: 180px;
-    border-radius: 40px;
-    font-size: 30px;
-    margin-top: 20px;
-  }
-
-  .links {
-    font-size: 30px; 
+  .photo {
+    height: 12vw;
+    width: 12vw;
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .menu {
+    right: 1vw;
+    top: 1vw;
+  }
+
+  .navbar {
+    width: 90%;
+    max-width: 260px;
+  }
+
+  svg {
+    width: 40vw;
+  }
+
+  .photo {
+    height: 15vw;
+    width: 15vw;
+  }
+
+  .skills {
+    padding: 5vw;
+  }
+
+  .about {
+    padding: 5vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  header {
+    padding: 2vw;
+    padding-top: 30vw;
+    font-size: 1rem;
+  }
+
+  svg {
+    width: 50vw;
+  }
+
+  .photo {
+    height: 20vw;
+    width: 20vw;
+  }
+
+  .skills li, .about h1, .about p, footer h1, footer p, input, textarea, button {
+    font-size: 1rem;
+  }
+
+  .skills .percentage, .links {
+    font-size: 1rem;
+  }
+
+  input, textarea {
+    height: 4vw;
+  }
+
+  button {
+    height: 4vw;
+    width: 12vw;
+    font-size: 1rem;
+  }
+}
