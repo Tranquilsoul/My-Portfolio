@@ -283,7 +283,7 @@ h1[data-scroll="in"], h2[data-scroll="in"], li[data-scroll="in"], p[data-scroll=
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   
  .menu{
   right: 100px;
