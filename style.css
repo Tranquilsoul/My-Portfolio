@@ -57,6 +57,7 @@ html.no-scroll{
   transition: all .5s;
   left: -100%;
   z-index: 1;
+  font-size: 30px;
 }
 
 .navbar a{
@@ -282,7 +283,7 @@ h1[data-scroll="in"], h2[data-scroll="in"], li[data-scroll="in"], p[data-scroll=
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   
  .menu{
   right: 100px;
@@ -313,7 +314,6 @@ h1[data-scroll="in"], h2[data-scroll="in"], li[data-scroll="in"], p[data-scroll=
    padding: 20px;
    width: 350px;
    top: 350px;
-   left: 90px;
  }
 
  header div{
@@ -324,7 +324,7 @@ h1[data-scroll="in"], h2[data-scroll="in"], li[data-scroll="in"], p[data-scroll=
 
  .about{
   padding-inline: 80px;
-  height: 70vh;
+  height: 75vh;
   width: 100vw;
  }
 
