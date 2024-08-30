@@ -282,7 +282,7 @@ h1[data-scroll="in"], h2[data-scroll="in"], li[data-scroll="in"], p[data-scroll=
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   
  .menu{
   right: 100px;
@@ -412,3 +412,18 @@ button{
  font-size: 30px; 
  }
 }
+
+@media only screen and (min-width: 1024px) {
+  svg {
+    padding: 20px;
+    width: 400px;
+    top: 30%;
+    left: 20%;
+  }
+  .about {
+    padding-inline: 80px;
+    height: 50vh;
+    width: 100vw;
+  }
+}
+  
